@@ -159,18 +159,7 @@ const Keyboard = {
                 case "left":
                     keyElement.classList.add("keyboard__key--wide");
                     keyElement.innerHTML = createIconHTML("keyboard_arrow_left");
-
-                    /*let i = 0;
-                    document.addEventListener("click", () => {
-                        if (keyElement.contains(event.target)) {
-                            i++;
-                            this.elements.textField.focus();
-                            this.elements.textField.setSelectionRange(-1, (this.elements.textField.value.length - i) );
-                            this._toggleSound("click-on");
-                        } else {
-                            i = 0;
-                        }
-                    });*/
+                    
                     keyElement.addEventListener("click", () => {
                         //this.elements.textField.setSelectionRange(-1, (this.properties.value.length -1));
                         let start = this.elements.textField.selectionStart;
@@ -187,17 +176,6 @@ const Keyboard = {
                     keyElement.classList.add("keyboard__key--wide");
                     keyElement.innerHTML = createIconHTML("keyboard_arrow_right");
 
-                    /* let j = 0;
-                     document.addEventListener("click", () => {
-                         if (keyElement.contains(event.target)) {
-                             j++;
-                             this.elements.textField.focus();
-                             this.elements.textField.setSelectionRange(-1, (this.properties.value.length + j) );
-                             this._toggleSound("click-on");
-                         } else {
-                             j = 0;
-                         }
-                     });*/
                     keyElement.addEventListener("click", () => {
                         let start = this.elements.textField.selectionStart;
                         this.elements.textField.setSelectionRange(-1, (start +1));
@@ -394,11 +372,6 @@ const Keyboard = {
         this.properties.speech = !this.properties.speech;
 
         if(this.properties.speech) {
-
-            console.log("speech " + this.properties.speech);
-
-            // recognition.start();
-            // this.elements.textField.innerHTML = "LISTENING...";
 
             recognition.addEventListener("result", e => {
 
